@@ -2,8 +2,7 @@
 
 import { useContext } from "react";
 import { ToggleContext } from "../context/ToggleContext";
-import Lightning from "../blocks/Lightning/Lightning";
-
+import DarkVeil from "../react-bits/backgrounds/DarkVeil/DarkVeil";
 export default function Background({
   children,
 }: {
@@ -13,9 +12,19 @@ export default function Background({
 
   return (
     <>
-      <Lightning hue={245} xOffset={0} speed={0.7} intensity={2} size={3} />
+      <div className="min-h-screen">
+        <DarkVeil
+          speed={1}
+          hueShift={42}
+          noiseIntensity={0}
+          scanlineFrequency={0}
+          scanlineIntensity={0}
+          warpAmount={3}
+          resolutionScale={1.3}
+        />
+      </div>
       <div
-        className="absolute top-24 w-full text-white"
+        className="top-24 absolute px-12 lg:px-24 w-full"
         onClick={() => closeNavbar()}
       >
         {children}

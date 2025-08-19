@@ -9,20 +9,20 @@ export default function Navbar() {
   const { toggleValue, setToggleValue } = useContext(ToggleContext);
 
   return (
-    <div className="text-white font-bold flex justify-between items-center fixed z-10 top-0 left-0 right-0 h-20 px-5 bg-linear-to-t from-cyan-800 to-black">
+    <div className="top-0 right-0 left-0 z-10 fixed flex justify-between items-center bg-linear-to-t from-cyan-800 to-black px-5 h-20 font-bold">
       <div className="flex items-center gap-5 lg:w-1/2">
         <div
-          className="flex flex-col gap-2 lg:hidden"
+          className="lg:hidden flex flex-col gap-2"
           onClick={() => setToggleValue(!toggleValue)}
         >
-          <div className="w-7 h-1 bg-white"></div>
-          <div className="w-7 h-1 bg-white"></div>
+          <div className="bg-white w-7 h-1"></div>
+          <div className="bg-white w-7 h-1"></div>
         </div>
         <p className="text-3xl">Portofolio</p>
       </div>
       <div className="flex items-center gap-1 h-10">
-        <MdGTranslate className="text-white w-7 h-7" />
-        <p className="text-lg font-bold">ID</p>
+        <MdGTranslate className="w-7 h-7" />
+        <p className="font-bold text-lg">ID</p>
       </div>
       <div
         className={`${
@@ -36,28 +36,22 @@ export default function Navbar() {
           <div>Perkenalan</div>
         </Link>
         <Link
-          href="/keahlian"
+          href="/skills"
           className="hover:bg-linear-to-l hover:from-white hover:to-gray-400 px-5 lg:px-0 py-2"
         >
           <div>Keahlian</div>
         </Link>
         <Link
-          href="/pengalaman"
+          href="/experiences"
           className="hover:bg-linear-to-l hover:from-white hover:to-gray-400 px-5 lg:px-0 py-2"
         >
           <div>Pengalaman</div>
         </Link>
         <Link
-          href="/sertifikat"
+          href="/certificates"
           className="hover:bg-linear-to-l hover:from-white hover:to-gray-400 px-5 lg:px-0 py-2"
         >
           <div>Sertifikat</div>
-        </Link>
-        <Link
-          href="/kontak"
-          className="hover:bg-linear-to-l hover:from-white hover:to-gray-400 px-5 lg:px-0 py-2"
-        >
-          <div>Kontak</div>
         </Link>
       </div>
     </div>
