@@ -5,8 +5,8 @@ import ccitImage from "../../public/certificate/CCIT.jpg";
 import lspInformatikaImage from "../../public/certificate/LSP_informatika.jpg";
 import lspTikGlobalImage from "../../public/certificate/LSP_tikglobal.jpg";
 import udemyLaravelPznImage from "../../public/certificate/udemy_laravel_pzn.jpg";
-import dicodingAwsImage from "../../public/certificate/dicoding_aws.png";
 import niitImage from "../../public/certificate/NIIT.jpg";
+// import dicodingAwsImage from "../../public/certificate/dicoding_aws.png";
 import Image from "next/image";
 
 export default function Certificates() {

@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en" data-arp="">
       <body className={`${jetBrainsMono.className} antialiased text-white`}>
         <ToggleProvider>
-          <LocaleProvider localeValue="id">
+          <LocaleProvider>
             <Navbar />
             <Background>{children}</Background>
           </LocaleProvider>

@@ -4,25 +4,37 @@ import Link from "next/link";
 import { useContext } from "react";
 import { MdGTranslate } from "react-icons/md";
 import { ToggleContext } from "../context/ToggleContext";
+import { LocaleContext } from "../context/LocaleContext";
 
 export default function Navbar() {
   const { toggleValue, setToggleValue } = useContext(ToggleContext);
+  const { localeValue, toggleLocale } = useContext(LocaleContext);
 
   return (
     <div className="top-0 right-0 left-0 z-10 fixed flex justify-between items-center bg-linear-to-t from-cyan-800 to-black px-5 h-20 font-bold">
       <div className="flex items-center gap-5 lg:w-1/2">
         <div
-          className="lg:hidden flex flex-col gap-2"
+          className="lg:hidden flex flex-col gap-2 hover:cursor-pointer"
           onClick={() => setToggleValue(!toggleValue)}
         >
           <div className="bg-white w-7 h-1"></div>
           <div className="bg-white w-7 h-1"></div>
         </div>
-        <p className="text-3xl">Portofolio</p>
+        <p className="text-3xl">
+          {localeValue === "id" ? "Portofolio" : "Portfolio"}
+        </p>
       </div>
-      <div className="flex items-center gap-1 h-10">
+      <div
+        className="flex items-center gap-1 h-10 hover:cursor-pointer"
+        onClick={() => {
+          toggleLocale();
+          console.log(localeValue);
+        }}
+      >
         <MdGTranslate className="w-7 h-7" />
-        <p className="font-bold text-lg">ID</p>
+        <p className="font-bold text-lg">
+          {localeValue === "id" ? "ID" : "EN"}
+        </p>
       </div>
       <div
         className={`${

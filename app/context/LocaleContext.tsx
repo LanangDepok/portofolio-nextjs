@@ -1,15 +1,36 @@
 "use client";
 
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
 
-export const LocaleContext = createContext("Locale");
+interface LocaleContextType {
+  localeValue: "id" | "en";
+  toggleLocale: () => void;
+}
 
-export function LocaleProvider({
-  children,
-  localeValue,
-}: {
-  children: React.ReactNode;
-  localeValue: string;
-}) {
-  return <LocaleContext value={localeValue}>{children}</LocaleContext>;
+export const LocaleContext = createContext<LocaleContextType>({
+  localeValue: "id",
+  toggleLocale: () => {},
+});
+
+export function LocaleProvider({ children }: { children: React.ReactNode }) {
+  const [localeValue, setLocaleValue] = useState<"id" | "en">("id");
+
+  const toggleLocale = () => setLocaleValue(localeValue === "id" ? "en" : "id");
+
+  useEffect(() => {
+    const storedLocale = localStorage.getItem("locale");
+    if (storedLocale === "id" || storedLocale === "en") {
+      setLocaleValue(storedLocale);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("locale", localeValue);
+  }, [localeValue]);
+
+  return (
+    <LocaleContext value={{ localeValue, toggleLocale }}>
+      {children}
+    </LocaleContext>
+  );
 }
