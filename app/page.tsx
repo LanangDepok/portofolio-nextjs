@@ -19,6 +19,7 @@ export default function Home() {
               className="object-bottom object-cover"
               fill
               priority
+              placeholder="blur"
             ></Image>
           </div>
         </div>
