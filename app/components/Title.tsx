@@ -18,7 +18,7 @@ export default function Title() {
   const translation = translations[pathname];
 
   return (
-    <p className="mb-10 font-bold text-3xl text-center underline">
+    <p className="mb-10 font-bold text-3xl text-center underline underline-offset-8">
       {localeValue === "en" ? translation.en : translation.id}
     </p>
   );
