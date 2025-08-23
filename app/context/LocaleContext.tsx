@@ -2,35 +2,31 @@
 
 import { createContext, useEffect, useState } from "react";
 
-interface LocaleContextType {
-  localeValue: "id" | "en";
-  toggleLocale: () => void;
-}
+type LocaleContextType = [string, () => void];
 
-export const LocaleContext = createContext<LocaleContextType>({
-  localeValue: "id",
-  toggleLocale: () => {},
-});
+export const LocaleContext = createContext<LocaleContextType>(["id", () => {}]);
 
 export function LocaleProvider({ children }: { children: React.ReactNode }) {
-  const [localeValue, setLocaleValue] = useState<"id" | "en">("id");
+  const [locale, setLocale] = useState<string>("id");
 
-  const toggleLocale = () => setLocaleValue(localeValue === "id" ? "en" : "id");
+  const toggleLocale = () => {
+    const newLocale = locale === "id" ? "en" : "id";
+    if (typeof window !== "undefined") {
+      localStorage.setItem("locale", newLocale);
+    }
+    setLocale(newLocale);
+  };
 
   useEffect(() => {
-    const storedLocale = localStorage.getItem("locale");
-    if (storedLocale === "id" || storedLocale === "en") {
-      setLocaleValue(storedLocale);
+    if (typeof window !== "undefined") {
+      const storedLocale = localStorage.getItem("locale");
+      if (storedLocale) {
+        setLocale(storedLocale);
+      }
     }
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem("locale", localeValue);
-  }, [localeValue]);
-
   return (
-    <LocaleContext value={{ localeValue, toggleLocale }}>
-      {children}
-    </LocaleContext>
+    <LocaleContext value={[locale, toggleLocale]}>{children}</LocaleContext>
   );
 }

@@ -14,11 +14,12 @@ import { BiLogoPostgresql } from "react-icons/bi";
 import { SiTypescript } from "react-icons/si";
 import { FaJava } from "react-icons/fa6";
 import { BiLogoSpringBoot } from "react-icons/bi";
+import Title from "@/app/components/Title";
 
 export default function Skills() {
   return (
     <>
-      <p className="mb-10 font-bold text-3xl text-center underline">Keahlian</p>
+      <Title />
       <div className="gap-y-20 lg:gap-x-16 grid grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col items-center">
           <FaHtml5 className="size-20 text-[#F16529] hover:scale-150 hover:-translate-y-5" />

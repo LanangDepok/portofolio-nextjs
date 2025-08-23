@@ -19,8 +19,8 @@ export default function Card({
   technology: Technology[];
 }) {
   return (
-    <div className="flex flex-col mx-auto border-2 border-cyan-800 rounded-xl w-full min-h-1/2 overflow-hidden">
-      {children}
+    <div className="flex flex-col mx-auto border-2 border-cyan-800 rounded-xl w-full min-h-1/2">
+      <div className="rounded-t-xl w-full overflow-hidden">{children}</div>
       <div className="flex flex-col mx-5 mt-5">
         <div>
           <p className="font-bold text-xl text-center">{title}</p>

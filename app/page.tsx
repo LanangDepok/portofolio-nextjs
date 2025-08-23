@@ -1,25 +1,24 @@
-"use client";
-
 import Image from "next/image";
-import photoProfile from "../public/profile.jpg";
+import photoProfile from "@/public/profile.jpg";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { BsInstagram } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
+import Bio from "./Bio";
+import Title from "@/app/components/Title";
 
 export default function Home() {
   return (
     <>
-      <p className="mb-10 font-bold text-3xl text-center underline">
-        Perkenalan
-      </p>
+      <Title />
       <div className="flex lg:flex-row-reverse flex-col gap-10 lg:gap-36">
         <div>
           <div className="relative mx-auto rounded-xl w-72 h-96 overflow-hidden">
             <Image
               src={photoProfile}
-              fill
               alt="photo-profile"
               className="object-bottom object-cover"
+              fill
+              priority
             ></Image>
           </div>
         </div>
@@ -28,18 +27,7 @@ export default function Home() {
             <p className="font-bold text-2xl">Bagas Rizkiyanto</p>
             <p className="font-semibold text-lg">Full Stack Web Developer</p>
           </div>
-          <div className="text-justify">
-            Saya adalah seorang Full Stack Web Developer (Frontend & Backend)
-            berusia 22 tahun yang tinggal di Depok, dengan spesialisasi dalam
-            pengembangan web modern. Berbekal pengalaman profesional lebih dari
-            satu tahun serta latar belakang pendidikan di Teknik Informatika
-            dari Politeknik Negeri Jakarta dan CCIT Universitas Indonesia, saya
-            menguasai teknologi web modern, pemikiran kritis, inisiatif,
-            pembelajaran cepat, pemecahan masalah, kerja tim, dan kepemimpinan.
-            Saya berkomitmen untuk menciptakan perangkat lunak berkualitas
-            tinggi dan memberikan kontribusi yang berarti dalam setiap proyek
-            yang saya kerjakan.
-          </div>
+          <Bio />
           <div className="flex gap-12 mb-10">
             <a
               href="https://wa.me/62895365145790"

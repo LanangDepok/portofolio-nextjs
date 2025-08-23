@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
+import Navbar from "@/app/components/Navbar";
 import { ToggleProvider } from "./context/ToggleContext";
 import { LocaleProvider } from "./context/LocaleContext";
-import Background from "./components/Background";
+import Background from "@/app/components/Background";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],

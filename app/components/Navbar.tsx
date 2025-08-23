@@ -8,7 +8,7 @@ import { LocaleContext } from "../context/LocaleContext";
 
 export default function Navbar() {
   const { toggleValue, setToggleValue } = useContext(ToggleContext);
-  const { localeValue, toggleLocale } = useContext(LocaleContext);
+  const [localeValue, toggleLocale] = useContext(LocaleContext);
 
   return (
     <div className="top-0 right-0 left-0 z-10 fixed flex justify-between items-center bg-linear-to-t from-cyan-800 to-black px-5 h-20 font-bold">
@@ -28,7 +28,6 @@ export default function Navbar() {
         className="flex items-center gap-1 h-10 hover:cursor-pointer"
         onClick={() => {
           toggleLocale();
-          console.log(localeValue);
         }}
       >
         <MdGTranslate className="w-7 h-7" />
@@ -45,25 +44,25 @@ export default function Navbar() {
           href="/"
           className="hover:bg-linear-to-l hover:from-white hover:to-gray-400 px-5 lg:px-0 py-2"
         >
-          <div>Perkenalan</div>
+          <div>{localeValue === "en" ? "Introduction" : "Perkenalan"}</div>
         </Link>
         <Link
           href="/skills"
           className="hover:bg-linear-to-l hover:from-white hover:to-gray-400 px-5 lg:px-0 py-2"
         >
-          <div>Keahlian</div>
+          <div>{localeValue === "en" ? "Skills" : "Keahlian"}</div>
         </Link>
         <Link
           href="/experiences"
           className="hover:bg-linear-to-l hover:from-white hover:to-gray-400 px-5 lg:px-0 py-2"
         >
-          <div>Pengalaman</div>
+          <div>{localeValue === "en" ? "Experiences" : "Pengalaman"}</div>
         </Link>
         <Link
           href="/certificates"
           className="hover:bg-linear-to-l hover:from-white hover:to-gray-400 px-5 lg:px-0 py-2"
         >
-          <div>Sertifikat</div>
+          <div>{localeValue === "en" ? "Certificates" : "Sertifikat"}</div>
         </Link>
       </div>
     </div>
