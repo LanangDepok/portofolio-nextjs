@@ -9,7 +9,7 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaBootstrap } from "react-icons/fa";
 import { BiLogoPostgresql } from "react-icons/bi";
-import Card from "./card";
+import Card from "./components/Card";
 import Image from "next/image";
 import toolstoreImage from "@/public/experience/toolstore.jpg";
 import msibImage from "@/public/experience/MSIB.png";
