@@ -18,38 +18,48 @@ export default function Certificates() {
         <Image
           src={lspInformatikaImage}
           alt="LSP informatika certificate image"
+          placeholder="blur"
           priority
         ></Image>
         <Image
           src={lspTikGlobalImage}
           alt="LSP tik global certificate image"
+          placeholder="blur"
           priority
         ></Image>
-        <Image src={niitImage} alt="NIIT certificate image" priority></Image>
-        <Image src={ccitImage} alt="CCIT certificate image" priority></Image>
+        <Image
+          src={niitImage}
+          alt="NIIT certificate image"
+          placeholder="blur"
+        ></Image>
+        <Image
+          src={ccitImage}
+          alt="CCIT certificate image"
+          placeholder="blur"
+        ></Image>
         <Image
           src={udemyLaravelPznImage}
           alt="Udemy laravel pzn certificate image"
-          priority
+          placeholder="blur"
         ></Image>
         <Image
           src={dicodingReactDasarImage}
           alt="Dicoding react dasar certificate image"
-          priority
+          placeholder="blur"
         ></Image>
         <Image
           src={dicodingJsDasarImage}
           alt="Dicoding javascript dasar certificate image"
-          priority
+          placeholder="blur"
         ></Image>
         <Image
           src={dicodingBackendDasarImage}
           alt="Dicoding backend dasar certificate image"
-          priority
+          placeholder="blur"
         ></Image>
         {/* <Image
           src={dicodingAwsImage}
-          alt="Dicoding aws certificate image" priority
+          alt="Dicoding aws certificate image" placeholder="blur"
         ></Image> */}
       </div>
     </>

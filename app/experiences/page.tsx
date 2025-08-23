@@ -73,6 +73,7 @@ export default function Experiences() {
             src={toolstoreImage}
             alt="Toolstore experience image"
             priority
+            placeholder="blur"
           ></Image>
         </Card>
         <Card
@@ -103,7 +104,12 @@ export default function Experiences() {
             },
           ]}
         >
-          <Image src={msibImage} alt="MSIB experience image" priority></Image>
+          <Image
+            src={msibImage}
+            alt="MSIB experience image"
+            priority
+            placeholder="blur"
+          ></Image>
         </Card>
         <Card
           title="scriptSI"
@@ -149,11 +155,7 @@ export default function Experiences() {
             },
           ]}
         >
-          <Image
-            src={scriptSiImage}
-            alt="scriptSI experience image"
-            priority
-          ></Image>
+          <Image src={scriptSiImage} alt="scriptSI experience image"></Image>
         </Card>
       </div>
     </>

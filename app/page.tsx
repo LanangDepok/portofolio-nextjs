@@ -3,7 +3,7 @@ import photoProfile from "@/public/profile.jpg";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { BsInstagram } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
-import Bio from "./Bio";
+import Bio from "@/app/components/Bio";
 import Title from "@/app/components/Title";
 
 export default function Home() {

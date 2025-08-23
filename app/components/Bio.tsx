@@ -1,7 +1,7 @@
 "use client";
 
 import { useContext } from "react";
-import { LocaleContext } from "./context/LocaleContext";
+import { LocaleContext } from "@/app/context/LocaleContext";
 
 export default function Bio() {
   const [localeValue] = useContext(LocaleContext);
