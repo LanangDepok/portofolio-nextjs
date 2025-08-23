@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { MdGTranslate } from "react-icons/md";
 import { ToggleContext } from "../context/ToggleContext";
 import { LocaleContext } from "../context/LocaleContext";
@@ -13,10 +13,6 @@ export default function Navbar() {
   const { closeNavbar } = useContext(ToggleContext);
   const pathname = usePathname();
 
-  useEffect(() => {
-    console.log(pathname);
-  });
-
   return (
     <div className="top-0 right-0 left-0 z-10 fixed flex justify-between items-center bg-linear-to-t from-cyan-800 to-black px-5 h-20 font-bold">
       <div className="flex items-center gap-5 lg:w-1/2">
@@ -24,8 +20,20 @@ export default function Navbar() {
           className="lg:hidden flex flex-col gap-2 hover:cursor-pointer"
           onClick={() => setToggleValue(!toggleValue)}
         >
-          <div className="bg-white w-7 h-1"></div>
-          <div className="bg-white w-7 h-1"></div>
+          <div
+            className={`${
+              toggleValue
+                ? "rotate-45 origin-left -translate-y-[5px]"
+                : "rotate-0 origin-left translate-y-0"
+            } bg-white w-8 h-1 transition duration-500`}
+          ></div>
+          <div
+            className={`${
+              toggleValue
+                ? "-rotate-45 origin-left translate-y-[5px]"
+                : "rotate-0 origin-left translate-y-0"
+            } bg-white w-8 h-1 transition duration-500`}
+          ></div>
         </div>
         <p className="text-3xl">
           {localeValue === "id" ? "Portofolio" : "Portfolio"}
@@ -45,7 +53,7 @@ export default function Navbar() {
       <div
         className={`${
           toggleValue && "translate-x-40 md:translate-x-48"
-        } transition duration-600 flex flex-col lg:flex-row lg:justify-end gap-7 lg:gap-5 fixed lg:static w-40 md:w-48 lg:w-1/2 top-20 bottom-0 -left-40 md:-left-48 lg:translate-none bg-linear-to-bl from-cyan-800 to-black lg:bg-none`}
+        } transition duration-500 flex flex-col lg:flex-row lg:justify-end gap-7 lg:gap-5 fixed lg:static w-40 md:w-48 lg:w-1/2 top-20 bottom-0 -left-40 md:-left-48 lg:translate-none bg-linear-to-bl from-cyan-800 to-black lg:bg-none`}
       >
         <Link
           href="/"
