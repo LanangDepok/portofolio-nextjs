@@ -1,5 +1,6 @@
 "use client";
 
+import { motion, useScroll, useTransform } from "motion/react";
 import Link from "next/link";
 import { useContext } from "react";
 import { MdGTranslate } from "react-icons/md";
@@ -13,8 +14,18 @@ export default function Navbar() {
   const { closeNavbar } = useContext(ToggleContext);
   const pathname = usePathname();
 
+  const { scrollY } = useScroll();
+  const background = useTransform(
+    scrollY,
+    [20, 21], // Scroll range: 0px to 200px
+    ["transparent", "linear-gradient(to top, #155E75, #000000)"] // From transparent to gradient
+  );
+
   return (
-    <div className="top-0 right-0 left-0 z-10 fixed flex justify-between items-center bg-linear-to-t from-cyan-800 to-black px-5 h-20 font-bold">
+    <motion.div
+      style={{ background }}
+      className="top-0 right-0 left-0 z-10 fixed flex justify-between items-center px-5 h-20 font-bold"
+    >
       <div className="flex items-center gap-5 lg:w-1/2">
         <div
           className="lg:hidden flex flex-col gap-2 hover:cursor-pointer"
@@ -105,6 +116,6 @@ export default function Navbar() {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
