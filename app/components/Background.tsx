@@ -24,7 +24,7 @@ export default function Background({
         />
       </div>
       <div
-        className="top-24 absolute px-12 lg:px-24 w-full"
+        className="top-28 absolute px-12 lg:px-24 w-full"
         onClick={() => closeNavbar()}
       >
         {children}

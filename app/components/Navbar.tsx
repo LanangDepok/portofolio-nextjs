@@ -17,7 +17,7 @@ export default function Navbar() {
   const { scrollY } = useScroll();
   const background = useTransform(
     scrollY,
-    [20, 21], // Scroll range: 0px to 200px
+    [32, 33], // Scroll range: 0px to 200px
     ["transparent", "linear-gradient(to top, #155E75, #000000)"] // From transparent to gradient
   );
 
