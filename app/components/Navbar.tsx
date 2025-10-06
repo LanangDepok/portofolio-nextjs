@@ -35,11 +35,13 @@ export default function Navbar() {
             } bg-white w-8 h-1 transition duration-500`}
           ></div>
         </div>
-        <p className="text-3xl">
-          {localeValue === "id" ? "Portofolio" : "Portfolio"}
-        </p>
+        <Link href={"/"}>
+          <p className="text-3xl">
+            {localeValue === "id" ? "Portofolio" : "Portfolio"}
+          </p>
+        </Link>
       </div>
-      <div
+      {/* <div
         className="flex items-center gap-1 h-10 hover:cursor-pointer"
         onClick={() => {
           toggleLocale();
@@ -49,17 +51,17 @@ export default function Navbar() {
         <p className="font-bold text-lg">
           {localeValue === "id" ? "ID" : "EN"}
         </p>
-      </div>
+      </div> */}
       <div
         className={`${
           toggleValue && "translate-x-40 md:translate-x-48"
-        } transition duration-500 flex flex-col lg:flex-row lg:justify-end gap-7 lg:gap-5 fixed lg:static w-40 md:w-48 lg:w-1/2 top-20 bottom-0 -left-40 md:-left-48 lg:translate-none bg-linear-to-bl from-cyan-800 to-black lg:bg-none`}
+        } transition duration-500 flex flex-col items-center lg:flex-row lg:justify-end gap-7 lg:gap-5 fixed lg:static w-40 md:w-48 lg:w-1/2 top-20 bottom-0 -left-40 md:-left-48 lg:translate-none bg-linear-to-bl from-cyan-800 to-black lg:bg-none`}
       >
         <Link
           href="/"
           className={`${
             pathname === "/" && "underline underline-offset-8"
-          }  hover:bg-linear-to-l hover:from-white hover:to-gray-400 px-5 lg:px-0 py-2`}
+          }  hover:bg-linear-to-l hover:from-white hover:text-black hover:to-gray-400 px-5 w-full lg:w-auto lg:px-3 py-2 lg:hover:rounded-2xl lg:hover:px-3`}
           onClick={() => closeNavbar()}
         >
           <div>{localeValue === "en" ? "Introduction" : "Perkenalan"}</div>
@@ -68,7 +70,7 @@ export default function Navbar() {
           href="/skills"
           className={`${
             pathname === "/skills" && "underline underline-offset-8"
-          }  hover:bg-linear-to-l hover:from-white hover:to-gray-400 px-5 lg:px-0 py-2`}
+          }  hover:bg-linear-to-l hover:from-white hover:text-black hover:to-gray-400 px-5 w-full lg:w-auto lg:px-3 py-2 lg:hover:rounded-2xl lg:hover:px-3`}
           onClick={() => closeNavbar()}
         >
           <div>{localeValue === "en" ? "Skills" : "Keahlian"}</div>
@@ -77,7 +79,7 @@ export default function Navbar() {
           href="/experiences"
           className={`${
             pathname === "/experiences" && "underline underline-offset-8"
-          }  hover:bg-linear-to-l hover:from-white hover:to-gray-400 px-5 lg:px-0 py-2`}
+          }  hover:bg-linear-to-l hover:from-white hover:text-black hover:to-gray-400 px-5 w-full lg:w-auto lg:px-3 py-2 lg:hover:rounded-2xl lg:hover:px-3`}
           onClick={() => closeNavbar()}
         >
           <div>{localeValue === "en" ? "Experiences" : "Pengalaman"}</div>
@@ -86,11 +88,22 @@ export default function Navbar() {
           href="/certificates"
           className={`${
             pathname === "/certificates" && "underline underline-offset-8"
-          }  hover:bg-linear-to-l hover:from-white hover:to-gray-400 px-5 lg:px-0 py-2`}
+          }  hover:bg-linear-to-l hover:from-white hover:text-black hover:to-gray-400 px-5 w-full lg:w-auto lg:px-3 py-2 lg:hover:rounded-2xl lg:hover:px-3`}
           onClick={() => closeNavbar()}
         >
           <div>{localeValue === "en" ? "Certificates" : "Sertifikat"}</div>
         </Link>
+        <div
+          className="flex items-center gap-1 mt-5 lg:mt-0 lg:ml-10 h-10 hover:cursor-pointer"
+          onClick={() => {
+            toggleLocale();
+          }}
+        >
+          <MdGTranslate className="w-7 h-7" />
+          <p className="font-bold text-lg">
+            {localeValue === "id" ? "ID" : "EN"}
+          </p>
+        </div>
       </div>
     </div>
   );
