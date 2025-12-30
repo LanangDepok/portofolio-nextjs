@@ -9,8 +9,9 @@ export default function Bio() {
   return (
     <div className="text-justify">
       {localeValue === "id"
-        ? "Saya adalah seorang Full Stack Web Developer (Frontend & Backend) berusia 22 tahun yang tinggal di Depok, dengan spesialisasi dalam pengembangan web modern. Berbekal pengalaman profesional lebih dari satu tahun serta latar belakang pendidikan di Teknik Informatika dari Politeknik Negeri Jakarta dan CCIT Universitas Indonesia, saya menguasai teknologi web modern, pemikiran kritis, inisiatif, pembelajaran cepat, pemecahan masalah, kerja tim, dan kepemimpinan. Saya berkomitmen untuk menciptakan perangkat lunak berkualitas tinggi dan memberikan kontribusi yang berarti dalam setiap proyek yang saya kerjakan."
-        : "I am a 22 year old Full Stack Web Developer (Frontend & Backend) based in Depok, specializing in modern web development. With over one year of professional experience and an educational background in Informatics Engineering from Politeknik Negeri Jakarta and CCIT Universitas Indonesia, I have strong expertise in modern web technologies, critical thinking, initiative, fast learning, problem-solving, teamwork, and leadership. I am committed to delivering high-quality software and making meaningful contributions to every project I work on."}
+        ? "Full Stack Web Developer & DevOps Support di PLN Icon Plus. Berusia 22 tahun dan berbasis di Depok, saya memiliki spesialisasi dalam membangun aplikasi web modern dengan dukungan infrastruktur yang solid. Berbekal pendidikan dari PNJ dan CCIT UI serta pengalaman industri, saya fokus pada penciptaan solusi digital yang efisien, berkualitas tinggi, dan siap menghadapi pertumbuhan beban kerja."
+        : "Full Stack Web Developer & DevOps Support at PLN Icon Plus. Based in Depok and 22 years old, I specialize in developing modern web applications with a robust infrastructure foundation. Leveraging my education from PNJ and CCIT UI and my professional experience, I am dedicated to creating efficient, high-quality digital solutions capable of scaling with demand."
+        }
     </div>
   );
 }
