@@ -2,11 +2,12 @@ import dicodingBackendDasarImage from "@/public/certificate/dicoding_backenddasa
 import dicodingJsDasarImage from "@/public/certificate/dicoding_jsdasar.png";
 import dicodingReactDasarImage from "@/public/certificate/dicoding_reactdasar.png";
 import ccitImage from "@/public/certificate/CCIT.jpg";
+import bnspKoperasi from "@/public/certificate/BNSP_koperasi.jpg"
 import lspInformatikaImage from "@/public/certificate/LSP_informatika.jpg";
 import lspTikGlobalImage from "@/public/certificate/LSP_tikglobal.jpg";
 import udemyLaravelPznImage from "@/public/certificate/udemy_laravel_pzn.jpg";
 import niitImage from "@/public/certificate/NIIT.jpg";
-// import dicodingAwsImage from "@/public/certificate/dicoding_aws.png";
+import dicodingAwsImage from "@/public/certificate/dicoding_aws.png";
 import Image from "next/image";
 import Title from "@/app/components/Title";
 
@@ -15,6 +16,12 @@ export default function Certificates() {
     <>
       <Title />
       <div className="gap-16 grid grid-cols-1 lg:grid-cols-2">
+        <Image
+          src={bnspKoperasi}
+          alt="BNSP koperasi certificate image"
+          placeholder="blur"
+          priority
+        ></Image>
         <Image
           src={lspInformatikaImage}
           alt="LSP informatika certificate image"
@@ -57,10 +64,10 @@ export default function Certificates() {
           alt="Dicoding backend dasar certificate image"
           placeholder="blur"
         ></Image>
-        {/* <Image
+        <Image
           src={dicodingAwsImage}
           alt="Dicoding aws certificate image" placeholder="blur"
-        ></Image> */}
+        ></Image>
       </div>
     </>
   );
