@@ -9,8 +9,11 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaBootstrap } from "react-icons/fa";
 import { BiLogoPostgresql } from "react-icons/bi";
+import { GrOracle } from "react-icons/gr";
+import { FaGolang } from "react-icons/fa6";
 import Card from "./components/Card";
 import Image from "next/image";
+import selfiePlnImage from "@/public/experience/selfie_plnIconPlus.jpeg";
 import toolstoreImage from "@/public/experience/toolstore.jpg";
 import msibImage from "@/public/experience/MSIB.png";
 import scriptSiImage from "@/public/experience/scriptSI.png";
@@ -25,6 +28,41 @@ export default function Experiences() {
     <>
       <Title />
       <div className="gap-16 grid grid-cols-1 lg:grid-cols-2">
+        <Card
+          title="PLN Icon Plus"
+          role="DevOps Support"
+          time={
+            localeValue === "en"
+              ? "April\u2014June 2025"
+              : "April\u2014Juni 2026"
+          }
+          description={
+            localeValue === "en"
+              ? "Monitoring and maintaining the system that functions to manage AMI (Advanced Metering Infrastructure) data, carried out in 24-hour shifts (8 hours × 3 shifts)."
+              : "Memonitoring dan Memelihara sistem yang berfungsi untuk mengelola data AMI (Advance Metering Infrastructure) yang dilakukan secara shifting 24 (8 x 3) jam."
+          }
+          technology={[
+            {
+              icon: <GrOracle className="size-8 text-[#F80000]" />,
+              name: "Oracle",
+            },
+            {
+              icon: <FaGolang className="size-8 text-[#00ADD8]" />,
+              name: "Go",
+            },
+            {
+              icon: <BiLogoPostgresql className="size-8 text-[#336791]" />,
+              name: "PostgreSQL",
+            }
+          ]}
+        >
+          <Image
+            src={selfiePlnImage}
+            alt="Toolstore experience image"
+            priority
+            placeholder="blur"
+          ></Image>
+        </Card>
         <Card
           title="Toolstore"
           role="Full Stack Web Developer"
